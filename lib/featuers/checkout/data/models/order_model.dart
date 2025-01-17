@@ -18,6 +18,8 @@ class OrderModel
       'shippingAddress': shippingAddress.toJson(),
       'products': products.map((e) => e.toJson()).toList(),
       'paymentMethod': paymentMethod,
+      'status': 'pending',
+      'date': DateTime.now().toString(),
     };
   }
   factory OrderModel.fromEntity(OrderEntity orderEntity){
