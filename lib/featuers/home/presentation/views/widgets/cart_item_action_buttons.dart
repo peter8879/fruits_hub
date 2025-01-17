@@ -19,7 +19,7 @@ class CartItemActionButtons extends StatelessWidget {
       children: [
         CartItemActionButton(
           onPressed: (){
-            cartItemEntity.increaseCount();
+            cartItemEntity.increaseQuantity();
             context.read<CartItemCubit>().updateCartItem(cartItemEntity);
 
           },
@@ -31,17 +31,17 @@ class CartItemActionButtons extends StatelessWidget {
         ),
         const SizedBox(width: 16,),
          Text(
-          '${cartItemEntity.count}',
+          '${cartItemEntity.quantity}',
           textAlign: TextAlign.center,
           style: AppTextStyles.bold16,
         ),
         const SizedBox(width: 16,),
        CartItemActionButton(
          onPressed: (){
-           if(cartItemEntity.count>1)
+           if(cartItemEntity.quantity>1)
              {
                log('decrease');
-               cartItemEntity.decreaseCount();
+               cartItemEntity.decreaseQuantity();
                context.read<CartItemCubit>().updateCartItem(cartItemEntity);
              }
 

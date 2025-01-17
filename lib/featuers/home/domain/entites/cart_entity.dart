@@ -14,7 +14,7 @@ class CartEntity{
     return cartItems.any((element) => element.product.code==productId);
   }
   void increaseProductCount(String productId){
-    cartItems.firstWhere((element) => element.product.code==productId).increaseCount();
+    cartItems.firstWhere((element) => element.product.code==productId).increaseQuantity();
   }
   double calculateTotalPrice(){
     double totalPrice=0;
